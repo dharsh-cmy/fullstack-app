@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        DOCKER_BUILDKIT = '0'
+        COMPOSE_DOCKER_CLI_BUILD = '0'
+    }
+
     stages {
 
         stage('Build') {

@@ -5,14 +5,14 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "3000:3000"
+      - "3001:3000"
     depends_on:
       - backend
 
   backend:
     build: ./backend
     ports:
-      - "5000:5000"
+      - "5001:5000"
     env_file:
       - ./backend/.env
     depends_on:
@@ -25,7 +25,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: fullstackdb
     ports:
-      - "3307:3306"
+      - "3308:3306"
     volumes:
       - mysql-data:/var/lib/mysql
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
